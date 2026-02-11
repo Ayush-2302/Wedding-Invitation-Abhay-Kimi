@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wedding Invitation | Abhay & Kimi</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<!-- Three.js -->
+<script src="https://unpkg.com/three@0.157.0/build/three.min.js"></script>
+
+<style>
+:root{
+--primary-gold:#c9a961;
+--deep-maroon:#4a0e0e;
+--soft-cream:#faf8f3;
+--dark-text:#2c1810;
+}
+
+body{
+font-family:"Montserrat",sans-serif;
+background:linear-gradient(to bottom,#faf8f3,#f5f1e8);
+color:var(--dark-text);
+overflow-x:hidden;
+}
+
+.title-font{font-family:"Cormorant Garamond",serif;}
+.script-font{font-family:"Great Vibes",cursive;}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:0;
+}
+
+/* Responsive glass card */
+.glass-card{
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(15px);
+border-radius:30px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+transition:.4s ease;
+}
+.glass-card:hover{
+transform:translateY(-6px);
+}
+
+/* Countdown */
+.countdown-item{
+background:linear-gradient(135deg,#4a0e0e,#6b1515);
+color:#fff;
+border-radius:20px;
+min-width:70px;
+}
+
+/* Button */
+.location-btn{
+background:linear-gradient(135deg,#c9a961,#d4af37);
+transition:.3s ease;
+}
+.location-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(201,169,97,.5);
+}
+
+/* Divider */
+.gold-divider{
+height:2px;
+background:linear-gradient(to right,transparent,#c9a961,transparent);
+margin:1.5rem auto;
+max-width:150px;
+}
+
+/* Responsive fixes */
+@media(max-width:640px){
+h1{font-size:2.8rem!important;}
+.script-font{font-size:1.5rem!important;}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<!-- HERO -->
+<section class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative">
+
+<div class="text-5xl text-yellow-600 mb-4">
+<i class="fa-solid fa-om"></i>
+</div>
+
+<p class="uppercase tracking-widest text-xs text-yellow-700 mb-6">
+Shree Ganeshaya Namah
+</p>
+
+<h1 class="title-font text-6xl md:text-8xl font-bold text-[var(--deep-maroon)] mb-4">
+Abhay <span class="text-yellow-600">&</span> Kimi
+</h1>
+
+<p class="script-font text-3xl md:text-4xl text-yellow-600 mb-6">
+Together with their families
+</p>
+
+<p class="max-w-md text-sm md:text-base mb-10 text-gray-600">
+Request the honour of your presence as they begin their journey of eternal love
+</p>
+
+<!-- Countdown -->
+<div id="countdown" class="flex flex-wrap justify-center gap-4 mb-10">
+<div class="countdown-item p-4 text-center">
+<span id="days" class="text-2xl md:text-3xl font-bold block">00</span>
+<span class="text-xs uppercase">Days</span>
+</div>
+<div class="countdown-item p-4 text-center">
+<span id="hours" class="text-2xl md:text-3xl font-bold block">00</span>
+<span class="text-xs uppercase">Hours</span>
+</div>
+<div class="countdown-item p-4 text-center">
+<span id="mins" class="text-2xl md:text-3xl font-bold block">00</span>
+<span class="text-xs uppercase">Mins</span>
+</div>
+<div class="countdown-item p-4 text-center">
+<span id="secs" class="text-2xl md:text-3xl font-bold block">00</span>
+<span class="text-xs uppercase">Secs</span>
+</div>
+</div>
+
+</section>
+
+<!-- COUPLE -->
+<section class="py-16 px-6 relative z-10">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+
+<!-- Groom -->
+<div class="glass-card p-8 text-center">
+<i class="fa-solid fa-user-tie text-4xl text-yellow-600 mb-4"></i>
+<h3 class="title-font text-2xl font-bold mb-2">Ayushman Abhay Kumar</h3>
+<p class="text-sm text-gray-500 mb-4">Son of Mr. Dilip Mishra</p>
+<p class="text-sm text-gray-600">
+Village: Shokhara 02<br>
+Post: Barauni, Begusarai, Bihar
+</p>
+</div>
+
+<!-- Bride -->
+<div class="glass-card p-8 text-center">
+<i class="fa-solid fa-user text-4xl text-pink-500 mb-4"></i>
+<h3 class="title-font text-2xl font-bold mb-2">Ayushmati Kumari Kimi</h3>
+<p class="text-sm text-gray-500 mb-4">Daughter of Mr. Ashutosh Thakur</p>
+<p class="text-sm text-gray-600">
+Village & Post: Chamtha Barkhur<br>
+Bachhwara, Begusarai, Bihar
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- EVENTS -->
+<section class="py-16 px-6 bg-white/60 backdrop-blur relative z-10">
+<div class="max-w-4xl mx-auto text-center">
+
+<h2 class="title-font text-4xl font-bold text-[var(--deep-maroon)] mb-6">
+Wedding Celebrations
+</h2>
+
+<div class="glass-card p-8 mb-8">
+<i class="fa-solid fa-hands-praying text-yellow-600 text-3xl mb-3"></i>
+<p class="font-bold">14th February 2026</p>
+<p>Haldi & Mehendi Ceremony</p>
+</div>
+
+<div class="glass-card p-8">
+<i class="fa-solid fa-ring text-yellow-600 text-3xl mb-3"></i>
+<p class="font-bold">15th February 2026 | 6:00 PM</p>
+<p>Barat & Wedding Rituals</p>
+</div>
+
+<div class="mt-10">
+<a href="https://maps.app.goo.gl/yCy5GdYU4VJxUkt78" target="_blank"
+class="location-btn inline-flex items-center text-white px-8 py-4 rounded-full font-semibold">
+<i class="fa-solid fa-location-dot mr-2"></i>
+Get Directions
+</a>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-16 text-center bg-gradient-to-b from-transparent to-yellow-100 relative z-10">
+<p class="script-font text-3xl text-[var(--deep-maroon)] mb-4">
+Your presence is our greatest gift
+</p>
+<p class="text-xs uppercase tracking-widest text-gray-600">
+With Love & Blessings
+</p>
+<p class="title-font font-semibold mt-2">
+The Mishra & Thakur Families
+</p>
+</footer>
+
+<script>
+// Countdown
+function updateCountdown(){
+const weddingDate=new Date("February 15, 2026 18:00:00").getTime();
+const now=new Date().getTime();
+const distance=weddingDate-now;
+
+if(distance<0){
+document.getElementById("countdown").innerHTML="<p class='text-2xl font-bold'>Celebrating Our Union 🎉</p>";
+return;
+}
+
+const d=Math.floor(distance/(1000*60*60*24));
+const h=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const m=Math.floor((distance%(1000*60*60))/(1000*60));
+const s=Math.floor((distance%(1000*60))/1000);
+
+days.innerText=d;
+hours.innerText=h;
+mins.innerText=m;
+secs.innerText=s;
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+// Three.js background
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+const renderer=new THREE.WebGLRenderer({canvas:document.getElementById("bg"),alpha:true});
+renderer.setSize(window.innerWidth,window.innerHeight);
+camera.position.z=30;
+
+const geometry=new THREE.BufferGeometry();
+const vertices=[];
+for(let i=0;i<800;i++){
+vertices.push((Math.random()-0.5)*100);
+vertices.push((Math.random()-0.5)*100);
+vertices.push((Math.random()-0.5)*100);
+}
+geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
+const material=new THREE.PointsMaterial({color:0xc9a961,size:0.2});
+const particles=new THREE.Points(geometry,material);
+scene.add(particles);
+
+function animate(){
+requestAnimationFrame(animate);
+particles.rotation.y+=0.0008;
+renderer.render(scene,camera);
+}
+animate();
+
+window.addEventListener("resize",()=>{
+camera.aspect=window.innerWidth/window.innerHeight;
+camera.updateProjectionMatrix();
+renderer.setSize(window.innerWidth,window.innerHeight);
+});
+</script>
+
+</body>
+</html>
